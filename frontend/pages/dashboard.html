@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — SkillLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- theme.js runs first to prevent flash -->
+  <script src="../js/theme.js"></script>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/dashboard.css"/>
+  <link rel="stylesheet" href="../css/profile.css"/><!-- for dropdown + light mode -->
+  <style>
+    /* Inline tweaks for the new dropdown */
+    .user-pill-wrap { position: relative; }
+  </style>
+</head>
+<body>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay hidden" id="loadingOverlay">
+  <div class="loading-card">
+    <div class="loading-ring"></div>
+    <div class="loading-title" id="loadingLabel">Analysing…</div>
+    <div class="loading-sub">AI is processing your profile</div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="dash-topbar">
+  <div class="dash-topbar-inner">
+    <a class="dash-logo" href="dashboard.html"><span class="logo-gem">◈</span>SkillLens</a>
+
+    <div class="dash-nav-links">
+      <button class="dash-nav-link active" onclick="showSection('analyze',event)">Analyse</button>
+      <button class="dash-nav-link"        onclick="showSection('history',event)">History</button>
+      <a class="dash-nav-link" href="profile.html">My Profile</a>
+    </div>
+
+    <div class="dash-topbar-right">
+      <button class="dash-btn-demo" onclick="runDemo()">⚡ Try Demo</button>
+
+      <!-- ✅ User pill with dropdown — Profile and Logout are separate actions -->
+      <div class="user-pill-wrap">
+        <div class="user-pill" id="userPill">
+          <div class="user-avatar" id="userAvatar">?</div>
+          <span id="userName">Guest</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <!-- Dropdown menu -->
+        <div class="dropdown-menu hidden" id="userDropdown">
+          <button class="dropdown-item" id="dropdownProfile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            My Profile
+          </button>
+          <a class="dropdown-item" href="profile.html" style="text-decoration:none">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Settings
+          </a>
+          <div class="dropdown-divider"></div>
+          <!-- ✅ ONLY this button clears the JWT -->
+          <button class="dropdown-item danger" id="dropdownLogout">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN BODY -->
+<div class="dash-body">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+
+    <!-- Step 1: Resume Upload -->
+    <div class="dash-card">
+      <div class="dash-card-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        01 — Upload Resume
+      </div>
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="resumeFile" accept=".pdf"/>
+        <div class="upload-inner">
+          <div class="upload-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h4>Drop your resume here</h4>
+          <p>or <span class="upload-link">browse PDF files</span></p>
+          <p class="upload-hint">PDF only · Max 10 MB</p>
+        </div>
+      </div>
+      <div class="file-preview hidden" id="filePreview">
+        <div class="file-preview-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="file-info">
+          <div class="file-name" id="previewFileName">resume.pdf</div>
+          <div class="file-size" id="previewFileSize">—</div>
+        </div>
+        <button class="btn-remove" id="removeFile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="upload-progress hidden" id="uploadProgress">
+        <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+        <div class="progress-label"><span id="progressLabel">Uploading…</span></div>
+      </div>
+      <div class="parse-result hidden" id="parseResult">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="parseResultText">Parsed successfully</span>
+      </div>
+      <button class="btn-analyze" id="uploadBtn" disabled onclick="uploadResume()" style="margin-top:4px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Upload &amp; Parse
+      </button>
+    </div>
+
+    <!-- Step 2: Job Description -->
+    <div class="dash-card">
+      <div class="dash-card-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        02 — Job Description
+      </div>
+      <textarea class="jd-textarea" id="jobDescription" rows="9"
+        placeholder="Paste the full job description here…&#10;&#10;Example: We are looking for a Machine Learning Engineer with experience in Python, TensorFlow, scikit-learn, Docker, AWS…"></textarea>
+      <div class="jd-meta">
+        <span style="color:var(--text-dim)">Paste any job posting</span>
+        <span id="jdCount">0 chars</span>
+      </div>
+      <button class="btn-analyze" id="analyzeBtn" disabled onclick="runAnalysis()" style="margin-top:10px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Run Full Analysis
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dash-main" id="dashMain">
+
+    <div class="dash-card welcome-state" id="welcomeState">
+      <div class="welcome-state-icon">◈</div>
+      <h3>Ready to analyse your resume?</h3>
+      <p>Upload your PDF resume and paste a job description to get your ATS score, skill gap breakdown, job recommendations, and a personalised learning roadmap.</p>
+      <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:center">
+        <button class="btn-primary-lg" onclick="document.getElementById('uploadZone').click()" style="font-size:14px;padding:11px 22px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/></svg>
+          Upload Resume
+        </button>
+        <button class="btn-ghost-lg" onclick="runDemo()" style="font-size:14px;padding:11px 22px">⚡ Try Demo</button>
+      </div>
+    </div>
+
+    <div id="resultsSection" class="hidden">
+
+      <!-- ATS Banner -->
+      <div class="ats-banner" id="atsBanner">
+        <div class="ats-left">
+          <div class="ats-eyebrow">ATS Resume Match Score</div>
+          <div class="ats-score-text good" id="atsScoreText">0%</div>
+          <div class="ats-verdict" id="atsVerdict">Analysing…</div>
+          <div class="ats-context" id="atsContext"></div>
+        </div>
+        <div class="ats-gauge">
+          <svg class="gauge-svg" viewBox="0 0 100 100">
+            <defs><linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+            <circle class="gauge-bg" cx="50" cy="50" r="44"/>
+            <circle class="gauge-fill" id="gaugeFill" cx="50" cy="50" r="44" stroke="url(#gaugeGrad)" stroke-dasharray="276.46" stroke-dashoffset="276.46"/>
+          </svg>
+          <div class="gauge-center"><span class="gauge-pct" id="gaugePct">0%</span><span class="gauge-lbl">Score</span></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card green"><div class="stat-card-top"><span class="stat-card-icon">✅</span></div><div class="stat-card-num" id="statMatched">0</div><div class="stat-card-label">Skills Matched</div></div>
+        <div class="stat-card red"><div class="stat-card-top"><span class="stat-card-icon">⚠️</span></div><div class="stat-card-num" id="statMissing">0</div><div class="stat-card-label">Skills Missing</div></div>
+        <div class="stat-card blue"><div class="stat-card-top"><span class="stat-card-icon">📄</span></div><div class="stat-card-num" id="statResume">0</div><div class="stat-card-label">Your Skills</div></div>
+        <div class="stat-card purple"><div class="stat-card-top"><span class="stat-card-icon">💼</span></div><div class="stat-card-num" id="statJob">0</div><div class="stat-card-label">Required Skills</div></div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-row">
+        <div class="chart-card"><div class="chart-card-title">Skill Match Breakdown</div><div class="chart-wrap"><canvas id="doughnutChart"></canvas></div></div>
+        <div class="chart-card"><div class="chart-card-title">Your Skill Categories</div><div class="chart-wrap"><canvas id="barChart"></canvas></div></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="dash-card" style="padding:0 24px">
+        <div class="dash-tabs">
+          <button class="dash-tab active" data-tab="skills">Skills Gap</button>
+          <button class="dash-tab" data-tab="jobs">Job Matches</button>
+          <button class="dash-tab" data-tab="tips">Suggestions</button>
+          <button class="dash-tab" data-tab="learn">Learning Path</button>
+        </div>
+        <div class="tab-panel active" id="tab-skills" style="padding-bottom:24px">
+          <div style="margin-bottom:24px">
+            <div class="dash-card-title" style="margin-bottom:12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Missing Skills</div>
+            <div class="skills-wrap" id="missingSkills"></div>
+          </div>
+          <div>
+            <div class="dash-card-title" style="margin-bottom:12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Skills You Have</div>
+            <div class="skills-wrap" id="matchedSkills"></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-jobs" style="padding-bottom:24px"><p style="font-size:13px;color:var(--text-muted);margin-bottom:16px">Ranked by AI-powered skill compatibility</p><div class="job-rec-list" id="jobRecs"></div></div>
+        <div class="tab-panel" id="tab-tips" style="padding-bottom:24px"><p style="font-size:13px;color:var(--text-muted);margin-bottom:16px">Personalised suggestions to improve your resume</p><div class="suggestions-list" id="suggestionsList"></div></div>
+        <div class="tab-panel" id="tab-learn" style="padding-bottom:24px"><p style="font-size:13px;color:var(--text-muted);margin-bottom:16px">Curated courses for your missing skills</p><div id="learningResources"></div></div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn-ghost-lg" onclick="resetAll()" style="font-size:14px;padding:10px 20px">← New Analysis</button>
+        <button class="btn-ghost-lg" onclick="exportResults()" style="font-size:14px;padding:10px 20px">⬇ Export Report</button>
+      </div>
+    </div>
+
+    <!-- History Section -->
+    <div class="dash-card hidden" id="historySection" style="padding:0">
+      <div style="padding:24px 24px 0">
+        <div class="dash-card-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Analysis History</div>
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px">Your previous resume analyses</p>
+      </div>
+      <p class="empty-skills hidden" id="historyEmpty" style="padding:0 24px 24px">No analyses yet.</p>
+      <div style="overflow-x:auto">
+        <table class="history-table">
+          <thead><tr><th>Resume</th><th>ATS Score</th><th>Top Roles</th><th>Missing Skills</th><th>Date</th></tr></thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/toast.js"></script>
+<script src="../js/dashboard.js"></script>
+<script>
+  function showSection(section, evt) {
+    document.querySelectorAll('.dash-nav-link').forEach(l => l.classList.remove('active'));
+    if (evt?.currentTarget) evt.currentTarget.classList.add('active');
+    const hist    = document.getElementById('historySection');
+    const welcome = document.getElementById('welcomeState');
+    const results = document.getElementById('resultsSection');
+    if (section === 'history') {
+      hist.classList.remove('hidden');
+      results.classList.add('hidden');
+      welcome.classList.add('hidden');
+      loadHistory();
+    } else {
+      hist.classList.add('hidden');
+      if (state.lastResult) results.classList.remove('hidden');
+      else welcome.classList.remove('hidden');
+    }
+  }
+  if (sessionStorage.getItem('demo') === '1') {
+    sessionStorage.removeItem('demo');
+    setTimeout(runDemo, 400);
+  }
+</script>
+</body>
+</html>
