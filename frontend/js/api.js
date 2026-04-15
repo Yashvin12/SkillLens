@@ -5,7 +5,8 @@
  * Added: full /user route group for profile, settings, history.
  */
 
-const API_BASE = 'http://127.0.0.1:8000';
+const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE = isDev ? 'http://127.0.0.1:8000' : 'https://skilllens-nnkt.onrender.com';
 
 const api = {
   _token() { return localStorage.getItem('sl_token'); },
