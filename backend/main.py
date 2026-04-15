@@ -23,7 +23,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     # 🚩 ALLOW ALL ORIGINS FOR DEPLOYMENT (Replace with your Vercel URL later for security)
-    allow_origins=["*"], 
+    allow_origins=["https://skill-lens-gamma.vercel.app/"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
