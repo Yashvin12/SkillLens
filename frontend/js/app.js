@@ -5,7 +5,8 @@
  * Handles: file upload, API calls, result rendering, Chart.js visualizations
  */
 
-const API_BASE = "http://127.0.0.1:8000/api";
+const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE = isDev ? "http://127.0.0.1:8000/api" : "https://skilllens-nnkt.onrender.com"; 
 
 // ─── App State ───────────────────────────────────────────────────────────────
 let state = {
