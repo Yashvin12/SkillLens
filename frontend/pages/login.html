@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Log In — SkillLens</title>
+  <link rel="icon" type="image/png" href="../img/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/auth.css"/>
+</head>
+<body data-page="login">
+
+<div class="auth-page">
+
+  <!-- Left decorative panel -->
+  <div class="auth-panel-left">
+    <div class="grid-bg"></div>
+    <a class="auth-brand" href="../index.html">
+      <span class="logo-gem">◈</span> SkillLens
+    </a>
+    <div class="auth-panel-tagline">
+      <h2>Your next career move<br><span class="grad-text">starts here</span></h2>
+      <p>Analyse your resume against any job, identify skill gaps, and get a personalised learning roadmap in seconds.</p>
+    </div>
+    <div class="auth-panel-features">
+      <div class="auth-feat-item">
+        <div class="auth-feat-icon">🎯</div>
+        <div><strong>ATS Score Calculation</strong><p>See exactly how recruiters view your resume</p></div>
+      </div>
+      <div class="auth-feat-item">
+        <div class="auth-feat-icon">📊</div>
+        <div><strong>Skill Gap Visualisation</strong><p>Interactive charts showing matched and missing skills</p></div>
+      </div>
+      <div class="auth-feat-item">
+        <div class="auth-feat-icon">🚀</div>
+        <div><strong>Job Recommendations</strong><p>ML-powered matching across 12+ career paths</p></div>
+      </div>
+      <div class="auth-feat-item">
+        <div class="auth-feat-icon">📚</div>
+        <div><strong>Learning Roadmap</strong><p>Curated courses for every skill you're missing</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right form panel -->
+  <div class="auth-panel-right">
+    <div class="auth-form-wrap">
+
+      <div class="auth-form-header">
+        <h1>Welcome back</h1>
+        <p>Sign in to your SkillLens account</p>
+      </div>
+
+      <div class="auth-server-error" id="serverError"></div>
+
+      <form class="auth-form" id="loginForm" novalidate>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-input" type="email" id="email" name="email"
+            placeholder="you@example.com" autocomplete="email"/>
+          <span class="form-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-wrap">
+            <input class="form-input" type="password" id="password" name="password"
+              placeholder="Enter your password" autocomplete="current-password"/>
+            <button type="button" class="pw-toggle" id="pwToggle" aria-label="Toggle password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="form-error" id="passError"></span>
+        </div>
+
+        <button type="submit" class="auth-submit" id="submitBtn">
+          Sign In
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
+      </form>
+
+      <div class="auth-divider">or</div>
+
+      <p class="auth-switch">
+        Don't have an account? <a href="signup.html">Create one free →</a>
+      </p>
+
+      <p class="auth-switch" style="margin-top:8px">
+        <a href="dashboard.html" style="color:var(--text-muted);font-size:13px">Continue without account →</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="../js/api.js"></script>
+<script src="../js/toast.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

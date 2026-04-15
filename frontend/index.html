@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillLens — AI Resume Skill Gap Analyzer</title>
+  <link rel="icon" type="image/png" href="../img/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <!-- theme.js first to prevent flash -->
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/landing.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="logo-gem">◈</span>SkillLens</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#features">Features</a>
+      <a href="#how">How it Works</a>
+      <!-- Dynamic: shows Login/Signup OR Profile/Dashboard depending on auth state -->
+      <span id="navAuthArea" style="display:contents"></span>
+    </div>
+    <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile hidden" id="mobileMenu">
+    <a href="#features">Features</a>
+    <a href="#how">How it Works</a>
+    <span id="mobileAuthArea"></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-glow glow-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" data-aos="fade-down" data-aos-duration="600">
+      <span class="badge-dot"></span>AI-Powered Career Intelligence
+    </div>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="80">
+      Know exactly which<br><span class="hero-gradient">skills you're missing</span>
+    </h1>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="160">
+      Upload your resume, paste a job description, and get instant AI‑powered skill gap analysis, ATS scoring, and a personalised learning roadmap.
+    </p>
+    <div class="hero-actions" data-aos="fade-up" data-aos-delay="240">
+      <a href="pages/signup.html" class="btn-primary-lg" id="heroCtaBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Analyse My Resume
+      </a>
+      <a href="pages/dashboard.html" class="btn-ghost-lg" onclick="sessionStorage.setItem('isDemo','true')">
+        Try the Demo
+      </a>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="320">
+      <div class="hstat"><strong>200+</strong><span>Skills Tracked</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><strong>12+</strong><span>Job Roles</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><strong>AI</strong><span>NLP Engine</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><strong>Free</strong><span>To Use</span></div>
+    </div>
+  </div>
+
+  <!-- Preview card -->
+  <div class="hero-preview" data-aos="fade-left" data-aos-delay="200" data-aos-duration="900">
+    <div class="preview-card">
+      <div class="preview-header">
+        <div class="preview-dots"><span></span><span></span><span></span></div>
+        <span class="preview-title">Analysis Dashboard</span>
+      </div>
+      <div class="preview-score-row">
+        <div class="preview-score-circle">
+          <svg viewBox="0 0 100 100" class="score-svg">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#1e2535" stroke-width="8"/>
+            <circle cx="50" cy="50" r="42" fill="none" stroke="url(#sg)" stroke-width="8"
+              stroke-dasharray="264" stroke-dashoffset="66" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+            <defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient></defs>
+          </svg>
+          <div class="score-center"><span class="score-num">75%</span><span class="score-lbl">ATS Match</span></div>
+        </div>
+        <div class="preview-stats-col">
+          <div class="pstat green"><span class="pstat-val">8</span><span class="pstat-lbl">Matched</span></div>
+          <div class="pstat red"><span class="pstat-val">3</span><span class="pstat-lbl">Missing</span></div>
+          <div class="pstat blue"><span class="pstat-val">5</span><span class="pstat-lbl">Bonus</span></div>
+        </div>
+      </div>
+      <div class="preview-skills">
+        <span class="ps matched">Python</span><span class="ps matched">SQL</span>
+        <span class="ps missing">TensorFlow</span><span class="ps matched">Docker</span>
+        <span class="ps missing">Kubernetes</span><span class="ps matched">Git</span>
+      </div>
+      <div class="preview-bar">
+        <div class="pbar-label">ML Engineer</div>
+        <div class="pbar-track"><div class="pbar-fill" style="width:75%"></div></div>
+        <span class="pbar-pct">75%</span>
+      </div>
+      <div class="preview-bar">
+        <div class="pbar-label">Data Scientist</div>
+        <div class="pbar-track"><div class="pbar-fill" style="width:88%;background:linear-gradient(90deg,#10b981,#06b6d4)"></div></div>
+        <span class="pbar-pct">88%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <div class="section-label" data-aos="fade-up">What You Get</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Everything you need to<br>land your dream job</h2>
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Smart Resume Parsing</h3>
+        <p>Upload your PDF and our AI instantly extracts 200+ technical skills using advanced NLP — zero manual effort.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Skill Gap Analysis</h3>
+        <p>Compare your skills against any job description and get a clear breakdown of matched, missing, and bonus skills.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#10b981,#06b6d4)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>ATS Score Calculator</h3>
+        <p>Get a precise match percentage showing how your resume appears to Applicant Tracking Systems.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Job Recommendations</h3>
+        <p>ML-powered ranking across 12+ job roles — find which careers you're best suited for right now.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>Resume Suggestions</h3>
+        <p>Prioritised, actionable tips — from missing sections to keyword optimisation and ATS‑friendly formatting.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#14b8a6,#6366f1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3>Learning Roadmap</h3>
+        <p>Curated Coursera, Udemy, and YouTube links for every missing skill — your personal upskilling plan, instant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-inner">
+    <div class="section-label" data-aos="fade-up">Simple Process</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">From upload to insight<br>in under 30 seconds</h2>
+    <div class="steps-row">
+      <div class="step-item" data-aos="fade-right" data-aos-delay="0">
+        <div class="step-num-wrap"><div class="step-num">01</div><div class="step-line"></div></div>
+        <div class="step-body"><h3>Upload Your Resume</h3><p>Drag & drop your PDF. Our NLP engine extracts all technical skills automatically.</p></div>
+      </div>
+      <div class="step-item" data-aos="fade-right" data-aos-delay="80">
+        <div class="step-num-wrap"><div class="step-num">02</div><div class="step-line"></div></div>
+        <div class="step-body"><h3>Paste a Job Description</h3><p>Copy any job posting and paste it. SkillLens extracts all required skills instantly.</p></div>
+      </div>
+      <div class="step-item" data-aos="fade-right" data-aos-delay="160">
+        <div class="step-num-wrap"><div class="step-num">03</div><div class="step-line"></div></div>
+        <div class="step-body"><h3>Get Your Full Analysis</h3><p>See your ATS score, skill gap breakdown, job recommendations, and a learning path.</p></div>
+      </div>
+      <div class="step-item" data-aos="fade-right" data-aos-delay="240">
+        <div class="step-num-wrap"><div class="step-num">04</div></div>
+        <div class="step-body"><h3>Improve &amp; Track Progress</h3><p>Follow suggestions, complete courses, re-analyse, and watch your ATS score climb.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" data-aos="fade-up">
+  <div class="section-inner">
+    <div class="cta-inner">
+      <div class="cta-glow"></div>
+      <h2>Ready to close your skill gap?</h2>
+      <p>Create a free account and get your first analysis in under a minute.</p>
+      <div class="cta-actions">
+        <a href="pages/signup.html" class="btn-primary-lg">Get Started Free →</a>
+        <a href="pages/dashboard.html" class="btn-ghost-lg">Try the Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="nav-logo" href="index.html"><span class="logo-gem">◈</span>SkillLens</a>
+      <p>AI‑powered resume analysis and career intelligence for modern job seekers.</p>
+    </div>
+    <div class="footer-links">
+      <div class="flink-col"><strong>Product</strong><a href="pages/dashboard.html">Dashboard</a><a href="#features">Features</a><a href="#how">How it Works</a></div>
+      <div class="flink-col"><strong>Account</strong><a href="pages/login.html">Log In</a><a href="pages/signup.html">Sign Up</a><a href="pages/profile.html">My Profile</a></div>
+      <div class="flink-col"><strong>Tech</strong><span>FastAPI</span><span>scikit-learn</span><span>SQLite</span><span>Chart.js</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 SkillLens · Rights Reserved · Made by Yashvin, Akanksha</p></div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script>
+  AOS.init({ once: true, easing: 'ease-out-cubic', duration: 700 });
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+  });
+
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Dynamic nav: show Dashboard+Profile if logged in, else Login+SignUp
+  (function buildNav() {
+    const area       = document.getElementById('navAuthArea');
+    const mobileArea = document.getElementById('mobileAuthArea');
+    const cta        = document.getElementById('heroCtaBtn');
+
+    if (Auth.isLoggedIn()) {
+      const user = Auth.user();
+      area.innerHTML = `
+        <a href="pages/dashboard.html" class="nav-btn-ghost">Dashboard</a>
+        <a href="pages/profile.html"   class="nav-btn-solid">
+          ${user?.name?.charAt(0)?.toUpperCase() || '?'} ${user?.name?.split(' ')[0] || 'Profile'}
+        </a>`;
+      mobileArea.innerHTML = `
+        <a href="pages/dashboard.html">Dashboard</a>
+        <a href="pages/profile.html">My Profile</a>
+        <a href="#" onclick="Auth.logout('pages/login.html')">Logout</a>`;
+      if (cta) { cta.textContent = 'Go to Dashboard'; cta.href = 'pages/dashboard.html'; }
+    } else {
+      area.innerHTML = `
+        <a href="pages/login.html"  class="nav-btn-ghost">Log In</a>
+        <a href="pages/signup.html" class="nav-btn-solid">Get Started Free</a>`;
+      mobileArea.innerHTML = `
+        <a href="pages/login.html">Log In</a>
+        <a href="pages/signup.html">Sign Up Free</a>`;
+    }
+  })();
+</script>
+</body>
+</html>

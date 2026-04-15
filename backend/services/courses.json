@@ -1,0 +1,584 @@
+{
+  "_meta": {
+    "version": "1.1",
+    "note": "Complete skill library with direct course URLs. Added Feature Engineering & Model Deployment.",
+    "cost_values": ["free", "freemium", "paid"],
+    "freemium_note": "freemium = free to audit, paid for certificate"
+  },
+  "skills": {
+    "python": {
+      "description": "The #1 language for ML, data science, and backend APIs.",
+      "level": "Beginner", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Python for Beginners – Full Course", "url": "https://www.youtube.com/watch?v=rfscVS0vtbw", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Coursera", "course": "Python for Everybody Specialization – Dr. Chuck", "url": "https://www.coursera.org/specializations/python", "cost": "freemium", "rating": 4.8, "best": false},
+        {"platform": "Udemy", "course": "100 Days of Code: Python Bootcamp – Angela Yu", "url": "https://www.udemy.com/course/100-days-of-code/", "cost": "paid", "rating": 4.8, "best": false},
+        {"platform": "edX", "course": "Introduction to Python – MIT 6.0001", "url": "https://www.edx.org/course/introduction-to-computer-science-and-programming-7", "cost": "freemium", "rating": 4.7, "best": false}
+      ]
+    },
+    "javascript": {
+      "description": "The language of the web – essential for every frontend and Node.js backend.",
+      "level": "Beginner", "hours": "50-80 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "JavaScript Algorithms & Data Structures Certification", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Udemy", "course": "The Complete JavaScript Course 2024 – Jonas Schmedtmann", "url": "https://www.udemy.com/course/the-complete-javascript-course/", "cost": "paid", "rating": 4.8, "best": false},
+        {"platform": "YouTube", "course": "JavaScript Full Course – Bro Code (12 hrs)", "url": "https://www.youtube.com/watch?v=lfmg-EJ8gm4", "cost": "free", "rating": 4.8, "best": false}
+      ]
+    },
+    "typescript": {
+      "description": "JavaScript with types – reduces bugs and scales to large codebases.",
+      "level": "Intermediate", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "TypeScript Full Course – Matt Pocock", "url": "https://www.youtube.com/watch?v=30LWjhZzg50", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Udemy", "course": "Understanding TypeScript 2024 – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/understanding-typescript/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "java": {
+      "description": "Enterprise-grade language powering Android, Spring, and big data systems.",
+      "level": "Intermediate", "hours": "60-100 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Java Full Course – Bro Code (12 hrs)", "url": "https://www.youtube.com/watch?v=xk4_1vDrzzo", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Java Masterclass 2024 – Tim Buchalka", "url": "https://www.udemy.com/course/java-the-complete-java-developer-course/", "cost": "paid", "rating": 4.6, "best": false},
+        {"platform": "Coursera", "course": "Object Oriented Programming in Java – UC San Diego", "url": "https://www.coursera.org/specializations/object-oriented-programming", "cost": "freemium", "rating": 4.7, "best": false}
+      ]
+    },
+    "go": {
+      "description": "Google's fast, simple language for high-performance cloud services.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Go Programming – Full Course", "url": "https://www.youtube.com/watch?v=un6ZyFkqFKo", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Go: The Complete Developer's Guide – Stephen Grider", "url": "https://www.udemy.com/course/go-the-complete-developers-guide/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "rust": {
+      "description": "Systems language – memory-safe, blazing fast, no garbage collector.",
+      "level": "Advanced", "hours": "60-100 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Rust Programming Full Course – Doug Milford", "url": "https://www.youtube.com/watch?v=OX9HJsJUDxA", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Ultimate Rust Crash Course – Nathan Stocks", "url": "https://www.udemy.com/course/ultimate-rust-crash-course/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "c++": {
+      "description": "High-performance language for games, embedded systems, and ML frameworks.",
+      "level": "Advanced", "hours": "80-120 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "C++ Full Course – Bro Code", "url": "https://www.youtube.com/watch?v=-TkoO8Z07hI", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "edX", "course": "Introduction to C++ – Microsoft", "url": "https://www.edx.org/course/introduction-to-c-3", "cost": "freemium", "rating": 4.5, "best": false}
+      ]
+    },
+    "kotlin": {
+      "description": "Modern Android and backend language – 100% Java interoperable.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Kotlin Course – Full Tutorial for Beginners", "url": "https://www.youtube.com/watch?v=F9UC9DY-vIU", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Android Development with Kotlin – Denis Panjuta", "url": "https://www.udemy.com/course/android-kotlin-developer/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "swift": {
+      "description": "Apple's language for building iOS and macOS applications.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Swift Programming Tutorial – Complete Course", "url": "https://www.youtube.com/watch?v=comQ1-x2a1Q", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "iOS & Swift Bootcamp – Angela Yu", "url": "https://www.udemy.com/course/ios-13-app-development-bootcamp/", "cost": "paid", "rating": 4.8, "best": false}
+      ]
+    },
+    "machine learning": {
+      "description": "Build models that learn from data – the core of modern AI.",
+      "level": "Intermediate", "hours": "80-120 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Machine Learning Specialization – Andrew Ng (Stanford)", "url": "https://www.coursera.org/specializations/machine-learning-introduction", "cost": "freemium", "rating": 4.9, "best": true},
+        {"platform": "Google", "course": "Machine Learning Crash Course – Google Developers", "url": "https://developers.google.com/machine-learning/crash-course", "cost": "free", "rating": 4.7, "best": false},
+        {"platform": "freeCodeCamp", "course": "Machine Learning with Python – freeCodeCamp Cert", "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/", "cost": "free", "rating": 4.7, "best": false}
+      ]
+    },
+    "deep learning": {
+      "description": "Neural networks powering image recognition, NLP, and GenAI.",
+      "level": "Intermediate", "hours": "60-100 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Deep Learning Specialization – Andrew Ng", "url": "https://www.coursera.org/specializations/deep-learning", "cost": "freemium", "rating": 4.9, "best": true},
+        {"platform": "YouTube", "course": "MIT 6.S191: Introduction to Deep Learning", "url": "https://www.youtube.com/watch?v=ErnWZxJovaM", "cost": "free", "rating": 4.8, "best": false},
+        {"platform": "edX", "course": "Deep Learning Fundamentals – IBM", "url": "https://www.edx.org/course/deep-learning-fundamentals-with-keras", "cost": "freemium", "rating": 4.5, "best": false}
+      ]
+    },
+    "tensorflow": {
+      "description": "Google's production ML framework used by millions of engineers.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "TensorFlow Developer Professional Certificate – deeplearning.ai", "url": "https://www.coursera.org/professional-certificates/tensorflow-in-practice", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "freeCodeCamp", "course": "TensorFlow 2.0 Complete Course", "url": "https://www.youtube.com/watch?v=tPYj3fFJGjk", "cost": "free", "rating": 4.7, "best": false},
+        {"platform": "Google", "course": "TensorFlow Core Tutorials – Official Docs", "url": "https://www.tensorflow.org/tutorials", "cost": "free", "rating": 4.6, "best": false}
+      ]
+    },
+    "pytorch": {
+      "description": "Facebook's research-first deep learning framework, now dominant in production.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "PyTorch for Deep Learning – Full Course (10 hrs)", "url": "https://www.youtube.com/watch?v=V_xro1bcAuA", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "PyTorch for Deep Learning – Daniel Bourke", "url": "https://www.udemy.com/course/pytorch-for-deep-learning/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "scikit-learn": {
+      "description": "Python's go-to library for classical ML: classification, regression, clustering.",
+      "level": "Beginner", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Scikit-Learn Tutorial – Data School (Playlist)", "url": "https://www.youtube.com/playlist?list=PL5-da3qGB5ICeMbQuqbbCOQWcS6OYBr5A", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Machine Learning with Scikit-Learn & TensorFlow", "url": "https://www.udemy.com/course/machine-learning-and-data-science-2021/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "nlp": {
+      "description": "Natural Language Processing – the tech behind chatbots, search, and GenAI.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "NLP Specialization – deeplearning.ai", "url": "https://www.coursera.org/specializations/natural-language-processing", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "NLP with Python – Jose Portilla", "url": "https://www.udemy.com/course/nlp-natural-language-processing-with-python/", "cost": "paid", "rating": 4.6, "best": false},
+        {"platform": "YouTube", "course": "NLP with Python and NLTK – Sentdex", "url": "https://www.youtube.com/playlist?list=PLQVvvaa0QuDf2JswnfiGkliBInZnIC4HL", "cost": "free", "rating": 4.6, "best": false}
+      ]
+    },
+    "natural language processing": {
+      "description": "Build systems that understand and generate human language.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "NLP Specialization – deeplearning.ai", "url": "https://www.coursera.org/specializations/natural-language-processing", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "NPTEL", "course": "NLP by Prof. Pawan Goyal", "url": "https://onlinecourses.nptel.ac.in/noc26_cs45/preview", "cost": "free", "rating": 4.9, "best": false}
+      ]
+    },
+    "computer vision": {
+      "description": "Enable machines to interpret images and video – used in autonomous systems.",
+      "level": "Advanced", "hours": "50-80 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Convolutional Neural Networks – Andrew Ng (DL Course 4)", "url": "https://www.coursera.org/learn/convolutional-neural-networks", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "freeCodeCamp", "course": "Computer Vision with OpenCV – Full Course", "url": "https://www.youtube.com/watch?v=oXlwWbU8l2o", "cost": "free", "rating": 4.7, "best": false}
+      ]
+    },
+    "feature engineering": {
+      "description": "Crucial for ML performance—transforming raw data into meaningful inputs.",
+      "level": "Intermediate", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Feature Engineering – Google Cloud", "url": "https://www.coursera.org/learn/feature-engineering", "cost": "freemium", "rating": 4.5, "best": true},
+        {"platform": "Udemy", "course": "Feature Engineering for Machine Learning", "url": "https://www.udemy.com/course/feature-engineering-for-machine-learning/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "model deployment": {
+      "description": "The 'Ops' in MLOps—putting models into production via APIs and containers.",
+      "level": "Advanced", "hours": "40-50 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Deploying Machine Learning Models", "url": "https://www.coursera.org/learn/deploying-machine-learning-models", "cost": "freemium", "rating": 4.7, "best": true},
+        {"platform": "DeepLearning.AI", "course": "MLOps Specialization", "url": "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops", "cost": "freemium", "rating": 4.8, "best": false}
+      ]
+    },
+    "sql": {
+      "description": "Essential for querying every relational database – used in every data role.",
+      "level": "Beginner", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "Khan Academy", "course": "Intro to SQL: Querying and Managing Data", "url": "https://www.khanacademy.org/computing/computer-programming/sql", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "freeCodeCamp", "course": "SQL Tutorial – Full Database Course for Beginners", "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY", "cost": "free", "rating": 4.8, "best": false},
+        {"platform": "Udemy", "course": "The Ultimate MySQL Bootcamp – Colt Steele", "url": "https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "postgresql": {
+      "description": "The world's most advanced open-source relational database.",
+      "level": "Beginner", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "PostgreSQL Tutorial Full Course – Derek Banas", "url": "https://www.youtube.com/watch?v=85pG_pDkITY", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "The Complete Python/PostgreSQL Course 2.0 – Jose Salvatierra", "url": "https://www.udemy.com/course/complete-python-postgresql-database-course/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "mongodb": {
+      "description": "Leading NoSQL document database for flexible, scalable storage.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "MongoDB Tutorial for Beginners", "url": "https://www.youtube.com/watch?v=ofme2o29ngU", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "MongoDB – The Complete Developer's Guide – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/mongodb-the-complete-developers-guide/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "redis": {
+      "description": "In-memory data store for caching, sessions, and real-time analytics.",
+      "level": "Intermediate", "hours": "10-20 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Redis Crash Course – TechWorld with Nana", "url": "https://www.youtube.com/watch?v=jgpVdJB2sKQ", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Redis: The Complete Developer's Guide – Stephen Grider", "url": "https://www.udemy.com/course/redis-the-complete-developers-guide-p/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "elasticsearch": {
+      "description": "Distributed search and analytics engine – powers log analysis and search.",
+      "level": "Intermediate", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Elasticsearch Tutorial for Beginners – Amigoscode", "url": "https://www.youtube.com/watch?v=C3tlMqaNSaI", "cost": "free", "rating": 4.6, "best": true},
+        {"platform": "Udemy", "course": "Elasticsearch 8 and the Elastic Stack – In Depth & Hands On", "url": "https://www.udemy.com/course/elasticsearch-7-and-elastic-stack/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "pandas": {
+      "description": "Python's essential library for data manipulation and analysis.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Pandas Tutorial – Corey Schafer (10-part playlist)", "url": "https://www.youtube.com/playlist?list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Udemy", "course": "Data Analysis with Pandas and Python – Boris Paskhaver", "url": "https://www.udemy.com/course/data-analysis-with-pandas/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "numpy": {
+      "description": "Numerical computing foundation – arrays, linear algebra, fast math.",
+      "level": "Beginner", "hours": "10-15 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "NumPy for Machine Learning – Full Course", "url": "https://www.youtube.com/watch?v=uRsE5WGiKWo", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "YouTube", "course": "NumPy Tutorial – Nicolas Renotte (1.5 hrs)", "url": "https://www.youtube.com/watch?v=QUT1VHiLmmI", "cost": "free", "rating": 4.7, "best": false}
+      ]
+    },
+    "statistics": {
+      "description": "Foundational maths for data analysis, inference, and ML model evaluation.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "Khan Academy", "course": "Statistics and Probability – Full Course", "url": "https://www.khanacademy.org/math/statistics-probability", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "YouTube", "course": "Statistics Fundamentals – StatQuest with Josh Starmer", "url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9", "cost": "free", "rating": 4.9, "best": false},
+        {"platform": "Coursera", "course": "Statistics with Python Specialization – U. Michigan", "url": "https://www.coursera.org/specializations/statistics-with-python", "cost": "freemium", "rating": 4.6, "best": false}
+      ]
+    },
+    "data visualization": {
+      "description": "Communicate insights clearly – charts that tell stories, not just show data.",
+      "level": "Beginner", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Data Visualization with Python – Full Course", "url": "https://www.youtube.com/watch?v=a9UrKTVEeZA", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Coursera", "course": "Data Visualization with Python – IBM", "url": "https://www.coursera.org/learn/python-for-data-visualization", "cost": "freemium", "rating": 4.5, "best": false}
+      ]
+    },
+    "tableau": {
+      "description": "Leading drag-and-drop BI platform for interactive dashboards.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Tableau Full Course – Simplilearn (8 hrs)", "url": "https://www.youtube.com/watch?v=aHaOIvR00So", "cost": "free", "rating": 4.6, "best": true},
+        {"platform": "Coursera", "course": "Data Visualization with Tableau Specialization – UC Davis", "url": "https://www.coursera.org/specializations/data-visualization", "cost": "freemium", "rating": 4.5, "best": false}
+      ]
+    },
+    "power bi": {
+      "description": "Microsoft's BI tool for interactive dashboards and business reporting.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Power BI Full Course – Guy in a Cube", "url": "https://www.youtube.com/watch?v=AGrl-H87pRU", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Microsoft Power BI Desktop for Business Intelligence", "url": "https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "excel": {
+      "description": "Spreadsheet powerhouse – pivot tables, VLOOKUP, and data analysis.",
+      "level": "Beginner", "hours": "10-20 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Microsoft Excel Tutorial – Kevin Stratvert", "url": "https://www.youtube.com/watch?v=rwbho0CgEAI", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Coursera", "course": "Excel Skills for Business Specialization – Macquarie", "url": "https://www.coursera.org/specializations/excel", "cost": "freemium", "rating": 4.8, "best": false}
+      ]
+    },
+    "react": {
+      "description": "Facebook's UI library for building fast, component-driven frontends.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "React JS Full Course – Dave Gray", "url": "https://www.youtube.com/watch?v=RVFAyFWO4go", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "React – The Complete Guide 2024 – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", "cost": "paid", "rating": 4.7, "best": false},
+        {"platform": "Coursera", "course": "Meta Front-End Developer Professional Certificate", "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer", "cost": "freemium", "rating": 4.7, "best": false}
+      ]
+    },
+    "vue": {
+      "description": "Progressive JavaScript framework – gentler learning curve than React.",
+      "level": "Beginner", "hours": "20-35 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Vue.js 3 Tutorial – Net Ninja (Playlist)", "url": "https://www.youtube.com/playlist?list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Vue – The Complete Guide 2024 – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/vuejs-2-the-complete-guide/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "angular": {
+      "description": "Google's enterprise TypeScript framework for large-scale frontends.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Angular Tutorial for Beginners – Programming with Mosh", "url": "https://www.youtube.com/watch?v=k5E2AVpwsko", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Angular – The Complete Guide 2024 – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/the-complete-guide-to-angular-2/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "node.js": {
+      "description": "JavaScript runtime for fast, scalable server-side applications.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Node.js and Express.js Full Course", "url": "https://www.youtube.com/watch?v=Oe421EPjeBE", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "The Complete Node.js Developer Course – Andrew Mead", "url": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "html": {
+      "description": "The foundation of all web pages – semantic structure is non-negotiable.",
+      "level": "Beginner", "hours": "10-15 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Responsive Web Design Certification", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Khan Academy", "course": "HTML/JS: Making Webpages Interactive", "url": "https://www.khanacademy.org/computing/computer-programming/html-css", "cost": "free", "rating": 4.7, "best": false}
+      ]
+    },
+    "css": {
+      "description": "Style and layout the web – mastering CSS separates good devs from great ones.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "CSS Tutorial – Zero to Hero (Full Course)", "url": "https://www.youtube.com/watch?v=1Rs2ND1ryYc", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Advanced CSS and Sass – Jonas Schmedtmann", "url": "https://www.udemy.com/course/advanced-css-and-sass/", "cost": "paid", "rating": 4.8, "best": false}
+      ]
+    },
+    "flask": {
+      "description": "Lightweight Python web framework – perfect for REST APIs and microservices.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Flask Tutorial – Tech With Tim (Full Playlist)", "url": "https://www.youtube.com/playlist?list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "REST APIs with Flask and Python – Jose Salvatierra", "url": "https://www.udemy.com/course/rest-api-flask-and-python/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "django": {
+      "description": "Python's batteries-included framework for full-stack web apps.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Django Crash Course – Traversy Media", "url": "https://www.youtube.com/watch?v=e1IyzVyrLSU", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Python and Django Full Stack Bootcamp – Jose Portilla", "url": "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "fastapi": {
+      "description": "Modern, high-performance Python API framework with auto OpenAPI docs.",
+      "level": "Intermediate", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "FastAPI Tutorial – Tech With Tim (Full Course)", "url": "https://www.youtube.com/watch?v=tLKKmouUams", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "FastAPI – The Complete Course 2024 – Eric Roby", "url": "https://www.udemy.com/course/fastapi-the-complete-course/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "rest api": {
+      "description": "Architectural style for scalable, maintainable HTTP services.",
+      "level": "Beginner", "hours": "10-15 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "REST API Design Best Practices – Full Course", "url": "https://www.youtube.com/watch?v=-MTSQjw5DrM", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "REST APIs with Flask and Python – Jose Salvatierra", "url": "https://www.udemy.com/course/rest-api-flask-and-python/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "graphql": {
+      "description": "Query language for APIs – fetch exactly the data you need.",
+      "level": "Intermediate", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "GraphQL Full Course – Novice to Expert", "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Modern GraphQL with Node – Stephen Grider", "url": "https://www.udemy.com/course/graphql-with-react-course/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "docker": {
+      "description": "Containerisation makes deployments consistent across every environment.",
+      "level": "Intermediate", "hours": "20-35 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Docker Tutorial for Beginners – TechWorld with Nana", "url": "https://www.youtube.com/watch?v=3c-iBn73dDE", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Udemy", "course": "Docker & Kubernetes: The Practical Guide – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/docker-kubernetes-the-practical-guide/", "cost": "paid", "rating": 4.7, "best": false},
+        {"platform": "freeCodeCamp", "course": "Docker Containers & Kubernetes Fundamentals", "url": "https://www.youtube.com/watch?v=kTp5xUtcalw", "cost": "free", "rating": 4.7, "best": false}
+      ]
+    },
+    "kubernetes": {
+      "description": "Industry-standard container orchestration for scaling microservices.",
+      "level": "Advanced", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Kubernetes Tutorial for Beginners – TechWorld with Nana (4 hrs)", "url": "https://www.youtube.com/watch?v=X48VuDVv0do", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Udemy", "course": "Certified Kubernetes Administrator (CKA) – Mumshad Mannambeth", "url": "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/", "cost": "paid", "rating": 4.8, "best": false},
+        {"platform": "edX", "course": "Introduction to Kubernetes – Linux Foundation", "url": "https://www.edx.org/course/introduction-to-kubernetes", "cost": "freemium", "rating": 4.5, "best": false}
+      ]
+    },
+    "aws": {
+      "description": "Amazon's cloud platform – the most widely used in enterprise and startups.",
+      "level": "Intermediate", "hours": "40-80 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "AWS Certified Cloud Practitioner – Full Course (13 hrs)", "url": "https://www.youtube.com/watch?v=SOTamWNgDKc", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "AWS Certified Solutions Architect – Stephane Maarek", "url": "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/", "cost": "paid", "rating": 4.8, "best": false},
+        {"platform": "Coursera", "course": "AWS Fundamentals Specialization", "url": "https://www.coursera.org/specializations/aws-fundamentals", "cost": "freemium", "rating": 4.7, "best": false}
+      ]
+    },
+    "azure": {
+      "description": "Microsoft's enterprise cloud – tight .NET and Office integrations.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Azure Full Course – 11 hrs", "url": "https://www.youtube.com/watch?v=tDuruX7XSac", "cost": "free", "rating": 4.6, "best": true},
+        {"platform": "Udemy", "course": "AZ-900: Microsoft Azure Fundamentals – Scott Duffy", "url": "https://www.udemy.com/course/az900-azure/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "gcp": {
+      "description": "Google Cloud – best-in-class for ML workloads and BigQuery analytics.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "Google", "course": "Google Cloud Skills Boost – Cloud Engineer Path", "url": "https://www.cloudskillsboost.google/paths/11", "cost": "freemium", "rating": 4.7, "best": true},
+        {"platform": "Coursera", "course": "Google Cloud Fundamentals: Core Infrastructure", "url": "https://www.coursera.org/learn/gcp-fundamentals", "cost": "freemium", "rating": 4.5, "best": false}
+      ]
+    },
+    "terraform": {
+      "description": "Infrastructure as Code – provision any cloud resource declaratively.",
+      "level": "Intermediate", "hours": "20-35 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Terraform Course – Automate your AWS cloud infrastructure", "url": "https://www.youtube.com/watch?v=SLB_c_ayRMo", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "HashiCorp Certified: Terraform Associate 2024", "url": "https://www.udemy.com/course/terraform-beginner-to-advanced/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "ansible": {
+      "description": "Agentless automation for configuration management at scale.",
+      "level": "Intermediate", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Ansible Full Course – TechWorld with Nana", "url": "https://www.youtube.com/watch?v=1id6ERvfozo", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Ansible for the Absolute Beginner – Mumshad Mannambeth", "url": "https://www.udemy.com/course/learn-ansible/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "ci/cd": {
+      "description": "Automate testing and deployment – the backbone of modern DevOps.",
+      "level": "Intermediate", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "CI/CD Pipeline Tutorial – TechWorld with Nana", "url": "https://www.youtube.com/watch?v=R8_veQiYBjI", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "GitHub Actions – The Complete Guide – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/github-actions-the-complete-guide/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "jenkins": {
+      "description": "The most widely-used open-source CI automation server.",
+      "level": "Intermediate", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Jenkins Tutorial for Beginners – TechWorld with Nana", "url": "https://www.youtube.com/watch?v=6YZvp2GwT0A", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "DevOps Beginners to Advanced with Projects – Imran Teli", "url": "https://www.udemy.com/course/devsecops/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "linux": {
+      "description": "The OS of servers, cloud, and DevOps – master the command line.",
+      "level": "Beginner", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Linux Command Line – Full Course for Beginners", "url": "https://www.youtube.com/watch?v=ZtqBQ68cfJc", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "edX", "course": "Introduction to Linux – Linux Foundation", "url": "https://www.edx.org/course/introduction-to-linux", "cost": "freemium", "rating": 4.7, "best": false}
+      ]
+    },
+    "bash": {
+      "description": "Shell scripting to automate deployments, pipelines, and system tasks.",
+      "level": "Beginner", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Bash Scripting Tutorial for Beginners", "url": "https://www.youtube.com/watch?v=tK9Oc6AEnR4", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Bash Scripting and Shell Programming – Jason Cannon", "url": "https://www.udemy.com/course/bash-scripting/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "git": {
+      "description": "Version control – impossible to work on a team without it.",
+      "level": "Beginner", "hours": "10-15 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Git and GitHub for Beginners – Crash Course", "url": "https://www.youtube.com/watch?v=RGOj5yH7evk", "cost": "free", "rating": 4.9, "best": true},
+        {"platform": "Udemy", "course": "The Git & Github Bootcamp – Colt Steele", "url": "https://www.udemy.com/course/git-and-github-bootcamp/", "cost": "paid", "rating": 4.8, "best": false}
+      ]
+    },
+    "microservices": {
+      "description": "Architecture pattern for decomposing apps into independently deployable services.",
+      "level": "Advanced", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Microservices Tutorial – TechWorld with Nana", "url": "https://www.youtube.com/watch?v=rv4LlmLmVWk", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Microservices with Node JS and React – Stephen Grider", "url": "https://www.udemy.com/course/microservices-with-node-js-and-react/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "serverless": {
+      "description": "Build and run apps without managing infrastructure – pay per request.",
+      "level": "Intermediate", "hours": "20-30 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Serverless Framework Tutorial – Full Intro", "url": "https://www.youtube.com/watch?v=71cd5XerKss", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "AWS Lambda & Serverless Architecture Bootcamp", "url": "https://www.udemy.com/course/aws-lambda-serverless-architecture/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "spring": {
+      "description": "Java's dominant framework for enterprise and microservices architecture.",
+      "level": "Advanced", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Spring Boot Tutorial – Full Course – Amigoscode", "url": "https://www.youtube.com/watch?v=9SGDpanrc8U", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Spring & Hibernate for Beginners – Chad Darby", "url": "https://www.udemy.com/course/spring-hibernate-tutorial/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "spark": {
+      "description": "Unified big data engine – 100x faster than Hadoop for large-scale analytics.",
+      "level": "Advanced", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Apache Spark Tutorial with Python – Full Course", "url": "https://www.youtube.com/watch?v=_C8kWso4ne4", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Apache Spark with Python – Big Data with PySpark", "url": "https://www.udemy.com/course/apache-spark-with-python-big-data-with-pyspark-and-spark/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "cybersecurity": {
+      "description": "Protect systems and data from attacks – one of the fastest-growing fields.",
+      "level": "Intermediate", "hours": "60-100 hrs",
+      "courses": [
+        {"platform": "Google", "course": "Google Cybersecurity Professional Certificate", "url": "https://www.coursera.org/professional-certificates/google-cybersecurity", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "freeCodeCamp", "course": "Full Ethical Hacking Course – Network Penetration Testing", "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE", "cost": "free", "rating": 4.7, "best": false}
+      ]
+    },
+    "penetration testing": {
+      "description": "Ethical hacking – find vulnerabilities before attackers do.",
+      "level": "Advanced", "hours": "40-80 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Ethical Hacking Full Course – TCM Security (15 hrs)", "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Learn Ethical Hacking from Scratch – Zaid Sabih", "url": "https://www.udemy.com/course/learn-ethical-hacking-from-scratch/", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "network security": {
+      "description": "Secure networks from intrusions, misuse, and unauthorised access.",
+      "level": "Intermediate", "hours": "40-60 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Google Cybersecurity Professional Certificate", "url": "https://www.coursera.org/professional-certificates/google-cybersecurity", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "YouTube", "course": "Network Security Tutorial – Full Course – Simplilearn", "url": "https://www.youtube.com/watch?v=E03gh1huvW4", "cost": "free", "rating": 4.5, "best": false}
+      ]
+    },
+    "flutter": {
+      "description": "Google's cross-platform framework – one codebase for iOS, Android, and web.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "freeCodeCamp", "course": "Flutter Course – Full Tutorial for Beginners", "url": "https://www.youtube.com/watch?v=VPvVD8t02U8", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "The Complete Flutter Development Bootcamp – Angela Yu", "url": "https://www.udemy.com/course/flutter-bootcamp-with-dart/", "cost": "paid", "rating": 4.8, "best": false}
+      ]
+    },
+    "react native": {
+      "description": "Build native mobile apps using React and JavaScript.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "React Native Course for Beginners – Sonny Sangha", "url": "https://www.youtube.com/watch?v=ANdSdIlgsEw", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "React Native – The Practical Guide 2024 – Maximilian Schwarzmüller", "url": "https://www.udemy.com/course/react-native-the-practical-guide/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "figma": {
+      "description": "Collaborative design tool – wireframes, prototypes, and dev handoff.",
+      "level": "Beginner", "hours": "10-20 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Figma Tutorial for Beginners – Full Course", "url": "https://www.youtube.com/watch?v=FTFaQWZBqQ8", "cost": "free", "rating": 4.8, "best": true},
+        {"platform": "Udemy", "course": "Figma UI UX Design Essentials – Daniel Scott", "url": "https://www.udemy.com/course/figma-ux-ui-design-user-experience-tutorial-course/", "cost": "paid", "rating": 4.7, "best": false}
+      ]
+    },
+    "selenium": {
+      "description": "Browser automation for end-to-end testing of web applications.",
+      "level": "Intermediate", "hours": "15-25 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Selenium Python Tutorial – Tech With Tim", "url": "https://www.youtube.com/watch?v=Xjv1sY630Uc", "cost": "free", "rating": 4.7, "best": true},
+        {"platform": "Udemy", "course": "Selenium WebDriver with Python from Scratch – Rahul Shethi", "url": "https://www.udemy.com/course/learn-selenium-automation-in-easy-python-language/", "cost": "paid", "rating": 4.5, "best": false}
+      ]
+    },
+    "agile": {
+      "description": "Iterative project methodology used by 70%+ of software teams.",
+      "level": "Beginner", "hours": "10-15 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Agile with Atlassian Jira – Atlassian", "url": "https://www.coursera.org/learn/agile-atlassian-jira", "cost": "freemium", "rating": 4.7, "best": true},
+        {"platform": "YouTube", "course": "Agile Methodology Tutorial – Simplilearn", "url": "https://www.youtube.com/watch?v=WjwEh15M5Rw", "cost": "free", "rating": 4.5, "best": false}
+      ]
+    },
+    "scrum": {
+      "description": "Most popular Agile framework – sprints, standups, and retrospectives.",
+      "level": "Beginner", "hours": "8-12 hrs",
+      "courses": [
+        {"platform": "YouTube", "course": "Scrum in 20 Minutes – Scrum Training Series", "url": "https://www.youtube.com/watch?v=SWDhGSZbMBQ", "cost": "free", "rating": 4.6, "best": true},
+        {"platform": "Coursera", "course": "Scrum Master Certification Prep – LearnQuest", "url": "https://www.coursera.org/learn/scrum-master-certification", "cost": "freemium", "rating": 4.6, "best": false}
+      ]
+    },
+    "leadership": {
+      "description": "Guide and inspire teams – the #1 skill gap in senior engineering roles.",
+      "level": "Intermediate", "hours": "20-40 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Inspirational Leadership – HEC Paris", "url": "https://www.coursera.org/learn/inspirational-leadership", "cost": "freemium", "rating": 4.7, "best": true},
+        {"platform": "LinkedIn Learning", "course": "Leadership Foundations – LinkedIn", "url": "https://www.linkedin.com/learning/leadership-foundations-2019", "cost": "paid", "rating": 4.6, "best": false}
+      ]
+    },
+    "communication": {
+      "description": "Clear written and verbal communication – cited by employers as the #1 soft skill.",
+      "level": "Beginner", "hours": "15-30 hrs",
+      "courses": [
+        {"platform": "Coursera", "course": "Communication Skills for Engineers – Rice University", "url": "https://www.coursera.org/learn/technical-communication-engineers", "cost": "freemium", "rating": 4.7, "best": true},
+        {"platform": "YouTube", "course": "Technical Communication for Developers", "url": "https://www.youtube.com/watch?v=mD07C0XmX-A", "cost": "free", "rating": 4.8, "best": false}
+      ]
+    },
+    "project management": {
+      "description": "Plan, execute, and close projects on time and within budget.",
+      "level": "Intermediate", "hours": "30-50 hrs",
+      "courses": [
+        {"platform": "Google", "course": "Google Project Management Professional Certificate", "url": "https://www.coursera.org/professional-certificates/google-project-management", "cost": "freemium", "rating": 4.8, "best": true},
+        {"platform": "Coursera", "course": "Project Management Principles & Practices – UC Irvine", "url": "https://www.coursera.org/specializations/project-management", "cost": "freemium", "rating": 4.6, "best": false}
+      ]
+    }
+  }
+}
